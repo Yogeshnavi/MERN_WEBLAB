@@ -1,0 +1,36 @@
+# version: '3.9'
+
+# services:
+#   server:
+#     build: ./server
+#     ports:
+#       - "5000:5000"
+#     environment:
+#       - MONGO_URL=mongodb://mongo:27017/merncrud
+#     depends_on:
+#       - mongo
+
+#   client:
+#     build: ./client
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - server
+
+#   mongo:
+#     image: mongo:4.2
+#     ports:
+#       - "27017:27017"
+version: '3'
+services:
+  client:
+    image: myapp-client:v1
+    # other configurations for client service
+
+  server:
+    image: myapp-server:v1
+    # other configurations for server service
+
+  mongo:
+    image: mongo:4.2
+    # other configurations for MongoDB service
